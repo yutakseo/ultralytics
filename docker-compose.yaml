@@ -1,0 +1,12 @@
+services:
+  ultralytics:
+    image: ultralytics/ultralytics:latest
+    container_name: ultralytics
+    working_dir: /workspace
+    ipc: host
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./workspace:/workspace
+      - /mnt/datasets:/datasets
+    gpus: all
